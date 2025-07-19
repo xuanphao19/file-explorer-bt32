@@ -3,17 +3,254 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="icon" type="image/svg+xml" href="./javascript.svg" />
     <title>File Explorer</title>
 
-    <script type="module" crossorigin src="/file-explorer/assets/index-NtHFEmG1.js"></script>
-    <link rel="stylesheet" crossorigin href="/file-explorer/assets/index-BmAVGTu2.css">
+
+    <svg
+      hidden
+      aria-hidden="true"
+      class="icon w-0 h-0"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+      <symbol id="icon-js" viewBox="-12 -2 66 32" fill="none">
+        <rect x="10" y="10" width="48" height="36" fill="#FFCA28" />
+        <path
+          d="M19 25.2879L21.0615 23.9237C21.2231 24.4313 22.2462 25.6368 23.5385 25.6368C24.8308 25.6368 25.4308 24.931 25.4308 24.463C25.4308 23.1878 24.1112 22.7382 23.4774 22.5223C23.374 22.4871 23.289 22.4581 23.2308 22.4328C23.2009 22.4198 23.1558 22.4025 23.0979 22.3804C22.393 22.1111 19.7923 21.1175 19.7923 18.2373C19.7923 15.065 22.8538 14.7002 23.5462 14.7002C23.9991 14.7002 26.1769 14.7557 27.2615 16.7939L25.2615 18.1898C24.8231 17.3015 24.0946 17.0081 23.6462 17.0081C22.5385 17.0081 22.3077 17.8201 22.3077 18.1898C22.3077 19.227 23.5112 19.6919 24.5273 20.0844C24.7932 20.1871 25.0462 20.2848 25.2615 20.3866C26.3692 20.91 28 21.7666 28 24.463C28 25.8136 26.8672 28.0002 24.0154 28.0002C20.1846 28.0002 19.1692 25.7003 19 25.2879Z"
+          fill="#3E3E3E" />
+        <path
+          d="M9 25.5587L11.1487 24.1953C11.317 24.7026 11.9713 25.638 12.9205 25.638C13.8698 25.638 14.3557 24.663 14.3557 24.1953V15.0002H16.9982V24.1953C17.041 25.4636 16.3376 28.0002 13.2332 28.0002C10.379 28.0002 9.19242 26.3039 9 25.5587Z"
+          fill="#3E3E3E" />
+      </symbol>
+      <symbol id="icon-css" viewBox="0 0 28 28" fill="none">
+        <path d="M6 28L4 3H28L26 28L16 31L6 28Z" fill="#1172B8" />
+        <path d="M26 5H16V29.5L24 27L26 5Z" fill="#33AADD" />
+        <path
+          d="M19.5 17.5H9.5L9 14L17 11.5H9L8.5 8.5H24L23.5 12L17 14.5H23L22 24L16 26L10 24L9.5 19H12.5L13 21.5L16 22.5L19 21.5L19.5 17.5Z"
+          fill="white" />
+      </symbol>
+      <symbol id="icon-json" viewBox="0 0 32 32">
+        <path
+          style="fill: #f5de19"
+          d="M5,3H7V5H5V10A2,2 0 0,1 3,12A2,2 0 0,1 5,14V19H7V21H5C3.93,20.73 3,20.1 3,19V15A2,2 0 0,0 1,13H0V11H1A2,2 0 0,0 3,9V5A2,2 0 0,1 5,3M19,3A2,2 0 0,1 21,5V9A2,2 0 0,0 23,11H24V13H23A2,2 0 0,0 21,15V19A2,2 0 0,1 19,21H17V19H19V14A2,2 0 0,1 21,12A2,2 0 0,1 19,10V5H17V3H19M12,15A1,1 0 0,1 13,16A1,1 0 0,1 12,17A1,1 0 0,1 11,16A1,1 0 0,1 12,15M8,15A1,1 0 0,1 9,16A1,1 0 0,1 8,17A1,1 0 0,1 7,16A1,1 0 0,1 8,15M16,15A1,1 0 0,1 17,16A1,1 0 0,1 16,17A1,1 0 0,1 15,16A1,1 0 0,1 16,15Z" />
+      </symbol>
+      <symbol id="icon-html" viewBox="0 0 28 28" fill="none">
+        <path d="M6 28L4 3H28L26 28L16 31L6 28Z" fill="#E44D26" />
+        <path d="M26 5H16V29.5L24 27L26 5Z" fill="#F16529" />
+        <path
+          d="M9.5 17.5L8.5 8H24L23.5 11H11.5L12 14.5H23L22 24L16 26L10 24L9.5 19H12.5L13 21.5L16 22.5L19 21.5L19.5 17.5H9.5Z"
+          fill="white" />
+      </symbol>
+      <symbol id="icon-gitignore" viewBox="0 0 30 30" fill="none">
+        <path
+          d="M2.58536 17.4132C1.80488 16.6327 1.80488 15.3673 2.58536 14.5868L14.5868 2.58536C15.3673 1.80488 16.6327 1.80488 17.4132 2.58536L29.4146 14.5868C30.1951 15.3673 30.1951 16.6327 29.4146 17.4132L17.4132 29.4146C16.6327 30.1951 15.3673 30.1951 14.5868 29.4146L2.58536 17.4132Z"
+          fill="#EE513B" />
+        <path
+          d="M12.1489 5.06152L10.9336 6.27686L14.0725 9.41577C13.9455 9.68819 13.8746 9.99201 13.8746 10.3124C13.8746 11.222 14.4461 11.9981 15.2496 12.3012V19.9798C14.4461 20.2829 13.8746 21.059 13.8746 21.9686C13.8746 23.1422 14.826 24.0936 15.9996 24.0936C17.1732 24.0936 18.1246 23.1422 18.1246 21.9686C18.1246 21.144 17.6549 20.429 16.9684 20.0768V12.3117L19.9689 15.3122C19.8481 15.5791 19.7809 15.8754 19.7809 16.1874C19.7809 17.361 20.7323 18.3124 21.9059 18.3124C23.0795 18.3124 24.0309 17.361 24.0309 16.1874C24.0309 15.0138 23.0795 14.0624 21.9059 14.0624C21.6778 14.0624 21.4582 14.0983 21.2522 14.1648L18.0297 10.9423C18.0914 10.7433 18.1246 10.5317 18.1246 10.3124C18.1246 9.13878 17.1732 8.18738 15.9996 8.18738C15.7803 8.18738 15.5688 8.22061 15.3697 8.2823L12.1489 5.06152Z"
+          fill="white" />
+      </symbol>
+      <symbol id="icon-svg" viewBox="0 0 24 24" fill="#FFCA28">
+        <path
+          d="M5.13,10.71H8.87L6.22,8.06A1.84,1.84,0,1,1,8.06,6.22l2.65,2.65V5.13a1.84,1.84,0,0,1,0-2.59,1.81,1.81,0,0,1,2.58,0,1.84,1.84,0,0,1,0,2.59V8.87L16,6.22a1.83,1.83,0,1,1,1.83,1.84l-2.65,2.65h3.74a1.84,1.84,0,0,1,2.59,0,1.81,1.81,0,0,1,0,2.58,1.84,1.84,0,0,1-2.59,0H15.13L17.78,16A1.83,1.83,0,1,1,16,17.78l-2.66-2.65v3.74a1.84,1.84,0,0,1,0,2.59,1.81,1.81,0,0,1-2.58,0,1.84,1.84,0,0,1,0-2.59V15.13L8.06,17.78A1.84,1.84,0,1,1,6.22,16l2.65-2.66H5.13a1.84,1.84,0,0,1-2.59,0,1.81,1.81,0,0,1,0-2.58A1.84,1.84,0,0,1,5.13,10.71Z" />
+      </symbol>
+      <symbol id="icon-txt" viewBox="0 0 392.681 392.681" xml:space="preserve">
+        <polyline
+          style="fill: #56ace0"
+          points="21.851,55.185 21.851,110.91 283.022,110.91 283.022,55.185 " />
+        <polyline
+          style="fill: #ffffff"
+          points="283.022,132.761 21.851,132.761 21.851,370.918 283.022,370.918 " />
+        <polygon
+          style="fill: #ffc10d"
+          points="181.786,290.11 172.671,322.433 204.929,313.189 328.792,189.391 305.584,166.312 " />
+        <path
+          style="fill: #ffffff"
+          d="M342.82,129.076l-21.85,21.85l23.079,23.079l21.85-21.85c6.4-6.4,6.4-16.743,0-23.079
+	C359.822,122.87,349.026,122.87,342.82,129.076z" />
+        <path
+          style="fill: #194f82"
+          d="M327.434,113.561l-22.626,22.626V44.195c0-6.012-4.848-10.925-10.925-10.925h-41.956V10.967
+	c0-6.012-4.848-10.925-10.925-10.925c-6.077,0-10.925,4.848-10.925,10.925V33.27H192.84V10.967c0-6.012-4.848-10.925-10.925-10.925
+	c-6.012,0-10.925,4.848-10.925,10.925V33.27h-37.236V10.967c-0.065-6.012-4.913-10.925-10.99-10.925
+	c-6.077,0-10.925,4.848-10.925,10.925V33.27H74.796V10.967c0-6.012-4.913-10.925-10.99-10.925S52.881,4.89,52.881,10.967V33.27
+	H10.925C4.913,33.27,0,38.118,0,44.195v337.519c0,6.012,4.848,10.925,10.925,10.925h283.022c6.012,0,10.925-4.848,10.925-10.925
+	V244.146l76.606-76.606c14.545-14.998,15.321-38.4,0-53.915C366.933,99.015,342.174,98.757,327.434,113.561z M21.851,55.12h31.095
+	v22.303c0,6.012,4.848,10.925,10.925,10.925S74.796,83.5,74.796,77.423V55.12h37.236v22.303c0,6.012,4.848,10.925,10.925,10.925
+	s10.925-4.848,10.925-10.925V55.12h37.236v22.303c0,6.012,4.848,10.925,10.925,10.925c6.012,0,10.925-4.848,10.925-10.925V55.12
+	h37.236v22.303c0,6.012,4.848,10.925,10.925,10.925s10.925-4.848,10.925-10.925V55.12h31.095v55.79H21.98V55.12
+	C21.98,55.12,21.851,55.12,21.851,55.12z M283.022,370.853H21.851V132.696h261.172v25.277l-26.634,26.634
+	c-1.616-3.943-5.56-6.659-10.02-6.659H58.634c-6.012,0-10.925,4.848-10.925,10.925c0,6.012,4.848,10.925,10.925,10.925h182.497
+	l-43.248,43.378H58.634c-6.012,0-10.925,4.848-10.925,10.925c0,6.077,4.913,10.796,10.925,10.796h117.463l-11.636,11.636
+	c-1.293,1.293-2.263,2.909-2.78,4.719l-7.693,26.958H58.634c-6.012,0-10.925,4.848-10.925,10.925c0,6.012,4.848,10.99,10.925,10.99
+	h89.277l-1.487,5.107c-1.099,3.814,0,7.887,2.78,10.667c2.715,2.715,6.206,3.685,10.667,2.78l53.786-15.192
+	c1.745-0.517,3.426-1.487,4.719-2.78l64.646-64.646V370.853L283.022,370.853z M204.929,313.189l-32.194,9.115l9.115-32.323
+	l123.733-123.733l23.079,23.079L204.929,313.189z M366.028,152.09l-21.85,21.85l-23.079-23.079l21.85-21.85
+	c6.206-6.206,16.937-6.206,23.079,0C371.459,134.765,373.333,144.656,366.028,152.09z" />
+      </symbol>
+      <symbol id="icon-png" viewBox="0 0 444 444" xml:space="preserve">
+        <g transform="translate(8 26)">
+          <path
+            style="fill: #caf1ff"
+            d="M280.163,314.882l-184,49.2c-17.2,4.4-34.8-5.6-39.2-22.8l-56-208.8c-4.4-17.2,5.6-34.8,22.8-39.2
+		l46.8-12.8L280.163,314.882L280.163,314.882z" />
+          <path
+            style="fill: #9ce0ff"
+            d="M396.163,26.882c17.6,0,32,14.4,32,32v224c0,17.6-14.4,32-32,32h-288c-17.6,0-32-14.4-32-32v-224
+		c0-17.6,14.4-32,32-32H396.163L396.163,26.882z" />
+          <path
+            style="fill: #80d440"
+            d="M424.163,191.682l-47.6-47.6c-3.2-3.2-8-3.2-11.2,0l-96.8,95.2l-60-56.4l-119.2,126.8h336
+		L424.163,191.682L424.163,191.682z" />
+          <path
+            style="fill: #62c418"
+            d="M267.363,235.682l-52.4-50.4c-3.2-3.2-8-3.2-11.2,0l-123.6,121.6h120L267.363,235.682
+		L267.363,235.682z" />
+          <g>
+            <path
+              style="fill: #5f961d"
+              d="M222.163,290.882c-2,0-4-0.8-5.6-2.4c-3.2-3.2-3.2-8,0-11.2l8-8c3.2-3.2,8-3.2,11.2,0
+			c3.2,3.2,3.2,8,0,11.2l-8,8C226.163,290.082,224.163,290.882,222.163,290.882z" />
+            <path
+              style="fill: #5f961d"
+              d="M94.563,303.682l-11.2-11.6l115.6-113.2c3.2-3.2,7.2-4.8,11.2-4.8s8,1.6,11.2,4.8l46.4,46.4
+			l-11.2,11.2l-46.4-46.4L94.563,303.682z" />
+          </g>
+          <path
+            style="fill: #5f971d"
+            d="M246.963,265.682c-2,0-4-0.8-5.6-2.4c-3.2-3.2-3.2-8,0-11.2l118.4-117.6c6-6,16.4-6,22.4,0
+		l47.6,47.6c3.2,3.2,3.2,8,0,11.2s-8,3.2-11.2,0l-47.6-47.6l-118.4,117.6C250.963,264.882,248.963,265.682,246.963,265.682z" />
+          <path
+            style="fill: #62a2dd"
+            d="M396.163,322.882h-288c-22,0-40-18-40-40v-224c0-22,18-40,40-40h288c22,0,40,18,40,40v224
+		C436.163,304.882,418.163,322.882,396.163,322.882z M108.163,34.882c-13.2,0-24,10.8-24,24v224c0,13.2,10.8,24,24,24h288
+		c13.2,0,24-10.8,24-24v-224c0-13.2-10.8-24-24-24H108.163z" />
+          <circle style="fill: #ffe53c" cx="156.163" cy="106.882" r="24" />
+          <path
+            style="fill: #f3d933"
+            d="M156.163,130.882c13.2,0,24-10.8,24-24s-10.8-24-24-24V130.882L156.163,130.882z" />
+          <path
+            style="fill: #c39215"
+            d="M156.163,138.882c-17.6,0-32-14.4-32-32s14.4-32,32-32s32,14.4,32,32
+		S173.763,138.882,156.163,138.882z M156.163,90.882c-8.8,0-16,7.2-16,16s7.2,16,16,16s16-7.2,16-16S164.963,90.882,156.163,90.882z
+		" />
+          <path
+            style="fill: #62a2dd"
+            d="M87.763,373.282c-7.2,0-14-2-20-5.6c-9.2-5.2-16-14-18.4-24.4l-56-208.8c-2.8-10.4-1.2-21.2,4-30.4
+		s14-16,24.4-18.4l46.8-12.8l4.4,15.6l-47.2,12.4c-6.4,1.6-11.6,5.6-14.8,11.2s-4,12-2.4,18.4l56,208.8c1.6,6.4,5.6,11.6,11.2,14.8
+		c5.6,3.2,12,4,18.4,2.4l184-49.2l4,15.6l-184,49.2C94.963,372.882,91.363,373.282,87.763,373.282z" />
+        </g>
+      </symbol>
+      <symbol id="chevron" fill="none" viewBox="0 -4 26 26">
+        <path
+          stroke="#2196F3"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+      </symbol>
+    </svg>
+    <script type="module" crossorigin src="/file-explorer/assets/index-DEjCLDeC.js"></script>
+    <link rel="stylesheet" crossorigin href="/file-explorer/assets/index-H_g174fb.css">
   </head>
 
   <body>
-    <h2>📁 File Explorer</h2>
-    <button onclick="addFolder()">Thêm thư mục gốc</button>
-    <div id="file-explorer"></div>
-    <div id="error-message" class="error"></div>
+    <div
+      class="explorer select-none w-[80%] h-screen flex flex-col mx-auto bg-white shadow-lg rounded-xl p-6 row">
+      <h2 class="title w-64 p-2 pl-4 font-bold text-gray-300 flex items-center gap-2">
+        📁 File Explorer
+      </h2>
+      <div class="file-explorer w-64 p-2 flex flex-col flex-grow">
+        <div id="list-item" class="flex flex-col"></div>
+        <div id="error-message" class="text-red-600 mt-4"></div>
+      </div>
+    </div>
+
+    <div
+      class="modal absolute w-64 select-none text-gray-300 bg-gray-800 border border-gray-600 rounded-md shadow-lg text-sm p-1">
+      <div data-act="new-file" class="hover:bg-gray-700 px-4 py-2 rounded cursor-pointer">
+        New File...
+      </div>
+      <div data-act="new-folder" class="hover:bg-gray-700 px-4 py-2 rounded cursor-pointer">
+        New Folder...
+      </div>
+      <div data-act="open-with" class="hover:bg-gray-700 px-4 py-2 rounded cursor-pointer">
+        Open with Five Server (root)
+      </div>
+      <div
+        data-act="file-explorer"
+        class="hover:bg-gray-700 px-4 py-2 rounded cursor-pointer flex justify-between">
+        <span class="flex-grow">Reveal in File Explorer</span>
+        <span class="text-xs text-gray-400">Shift+Alt+R</span>
+      </div>
+      <div data-act="terminal" class="hover:bg-gray-700 px-4 py-2 rounded cursor-pointer">
+        Open in Integrated Terminal
+      </div>
+      <hr class="my-1 border-gray-600" />
+      <div
+        data-act="share"
+        class="hover:bg-gray-700 px-4 py-2 rounded cursor-pointer flex justify-between">
+        <span class="flex-grow">Share</span>
+        <span class="text-md text-gray-200">&rsaquo;</span>
+      </div>
+      <hr class="my-1 border-gray-600" />
+      <div data-act="add-folder" class="hover:bg-gray-700 px-4 py-2 rounded cursor-pointer">
+        Add Folder to Workspace...
+      </div>
+      <div data-act="open-folder" class="hover:bg-gray-700 px-4 py-2 rounded cursor-pointer">
+        Open Folder Settings
+      </div>
+      <div data-act="remove-folder" class="hover:bg-gray-700 px-4 py-2 rounded cursor-pointer">
+        Remove Folder from Workspace
+      </div>
+      <hr class="my-1 border-gray-600" />
+      <div
+        data-act="find-in-folder"
+        class="hover:bg-gray-700 px-4 py-2 rounded cursor-pointer flex justify-between">
+        <span class="flex-grow">Find in Folder...</span>
+        <span class="text-xs text-gray-400">Shift+Alt+F</span>
+      </div>
+      <div
+        data-act="paste"
+        class="hover:bg-gray-700 px-4 py-2 rounded cursor-pointer flex justify-between">
+        <span class="flex-grow">Paste</span>
+        <span class="text-xs text-gray-400">Ctrl+V</span>
+      </div>
+      <hr class="my-1 border-gray-600" />
+      <div
+        data-act="copy-path"
+        class="hover:bg-gray-700 px-4 py-2 rounded cursor-pointer flex justify-between">
+        <span class="flex-grow">Copy Path</span>
+        <span class="text-xs text-gray-400">Shift+Alt+C</span>
+      </div>
+      <div
+        data-act="copy-path"
+        class="hover:bg-gray-700 px-4 py-2 rounded cursor-pointer flex justify-between">
+        <span class="flex-grow">Copy Relative Path</span>
+        <span class="text-xs text-gray-400">Ctrl+K</span>
+      </div>
+
+      <hr class="my-1 border-gray-600" />
+      <div
+        data-act="rename"
+        class="hover:bg-gray-700 px-4 py-2 rounded cursor-pointer flex justify-between">
+        <span class="flex-grow">Rename</span>
+        <span class="text-xs text-gray-400">F2</span>
+      </div>
+      <div
+        data-act="delete"
+        class="hover:bg-gray-700 px-4 py-2 rounded cursor-pointer flex justify-between">
+        <span class="flex-grow">Delete</span>
+        <span class="text-xs text-gray-400">Delete</span>
+      </div>
+      <hr class="my-1 border-gray-600" />
+      <div
+        data-act="file-history"
+        class="hover:bg-gray-700 px-4 py-2 rounded cursor-pointer flex justify-between">
+        <span class="flex-grow">Git: View File History</span>
+        <span class="text-xs text-gray-400">Alt+H</span>
+      </div>
+    </div>
+
   </body>
 </html>
+
