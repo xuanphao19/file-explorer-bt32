@@ -266,9 +266,11 @@ async function handleRename(item, node, parent) {
   itemNameEl.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
-      isAddNode = false;
       confirmRename();
-      item.remove();
+      if (isAddNode) {
+        isAddNode = false;
+        item.remove();
+      }
       renderNode(node, parent);
     } else if (e.key === "Escape") {
       cancelRename();
