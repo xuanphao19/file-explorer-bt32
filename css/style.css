@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.explorer {
+  background: rgb(31 31 31);
+}
+
+.title {
+  background: rgb(17 17 17);
+}
+.file-explorer {
+  user-select: none;
+  background: rgb(17 17 17);
+  color: #a19e9e;
+  resize: horizontal;
+  overflow-y: auto;
+}
+
+.item {
+  max-height: 32px;
+  overflow: hidden;
+  transition:
+    max-height 0.25s linear,
+    overflow 0.25s linear;
+  cursor: pointer;
+}
+
+.item.show-children {
+  max-height: max-content;
+  overflow: visible;
+}
+
+.item[tabindex="-1"] {
+  outline: 1px solid #999 !important;
+  background-color: rgb(29, 29, 33);
+  transition:
+    outline 0.2s linear,
+    background-color 0.2s linear;
+}
+
+.item.active {
+  outline: 1px solid #444444;
+  background-color: rgb(11 11 11);
+}
+
+.item .icon-chevron {
+  transition: transform 0.25s linear;
+}
+
+.item.rotate-icon .icon-chevron {
+  transform: rotate(450deg);
+}
+
+.item .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.modal {
+  top: -5000px;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95);
+  transition:
+    opacity 0.25s linear,
+    transform 0.25s linear,
+    visibility 0.25s linear;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  animation: fadeIn 0.25s linear;
+  z-index: 99999;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.item-name {
+  outline: none;
+}
+
+/* WebKit browsers */
+::-webkit-scrollbar {
+  width: 0;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: transparent;
+}
+
+.file-explorer::-webkit-scrollbar {
+  display: none;
+}

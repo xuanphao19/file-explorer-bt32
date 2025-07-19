@@ -1,0 +1,145 @@
+{
+  "filesystem": [
+    {
+      "id": "1",
+      "project": "project-32",
+      "name": "Homework-day-32",
+      "type": "folder",
+      "children": [
+        {
+          "id": "2",
+          "name": "src",
+          "type": "folder",
+          "children": [
+            {
+              "id": "3",
+              "name": "assets",
+              "type": "folder",
+              "children": [
+                {
+                  "id": "4",
+                  "name": "css",
+                  "type": "folder",
+                  "children": [
+                    {
+                      "id": "5",
+                      "name": "reset.css",
+                      "type": "file"
+                    },
+                    {
+                      "id": "6",
+                      "name": "style.css",
+                      "type": "file"
+                    }
+                  ]
+                },
+                {
+                  "id": "7",
+                  "name": "javascript",
+                  "type": "folder",
+                  "children": [
+                    {
+                      "id": "8",
+                      "name": "main.js",
+                      "type": "file"
+                    }
+                  ]
+                },
+                {
+                  "id": "9",
+                  "name": "images",
+                  "type": "folder",
+                  "children": [
+                    {
+                      "id": "10",
+                      "name": "img",
+                      "type": "folder",
+                      "children": [
+                        {
+                          "id": "11",
+                          "name": "picture1.png",
+                          "type": "file"
+                        },
+                        {
+                          "id": "12",
+                          "name": "picture2.jpg",
+                          "type": "file"
+                        },
+                        {
+                          "id": "13",
+                          "name": "picture3.img",
+                          "type": "file"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "14",
+                      "name": "icon",
+                      "type": "folder",
+                      "children": [
+                        {
+                          "id": "15",
+                          "name": "css.svg",
+                          "type": "file"
+                        },
+                        {
+                          "id": "16",
+                          "name": "html.svg",
+                          "type": "file"
+                        },
+                        {
+                          "id": "17",
+                          "name": "js.svg",
+                          "type": "file"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "18",
+              "name": "api",
+              "type": "folder",
+              "children": [
+                {
+                  "id": "19",
+                  "name": "apiHelper.js",
+                  "type": "file"
+                },
+                {
+                  "id": "20",
+                  "name": "service.js",
+                  "type": "file"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "21",
+          "name": "server",
+          "type": "folder",
+          "children": [
+            {
+              "id": "22",
+              "name": "db.json",
+              "type": "file"
+            },
+            {
+              "id": "23",
+              "name": "mdb.json",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "id": "24",
+          "name": "index.html",
+          "type": "file"
+        }
+      ]
+    }
+  ]
+}
