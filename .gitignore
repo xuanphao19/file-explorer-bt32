@@ -1,0 +1,10 @@
+.vscode/*
+.vscode
+.prettierrc
+package-lock.json
+node_modules/*
+node_modules
+.vite/
+postcss.config.js
+tailwind.config.js
+vite.config.js
