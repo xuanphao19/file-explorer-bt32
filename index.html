@@ -251,6 +251,15 @@
     </div>
 
     <script type="module" src="./js/file-explorer.js"></script>
+
+    <app-modal></app-modal>
+    <script>
+      class AppModal extends HTMLElement {
+        connectedCallback() {
+          console.log("Connected");
+        }
+      }
+      customElements.define("app-modal", AppModal, { extends: "button" });
+    </script>
   </body>
 </html>
-

@@ -12,7 +12,7 @@ let isAddNode = false;
 // 🧹 Dọn trạng thái hiện tại
 function clearUIState(event = {}) {
   if (event.type !== "contextmenu") explorer.querySelector(".active")?.classList.remove("active");
-  explorer?.querySelector('[tabindex="-1"]')?.setAttribute("tabindex", "");
+  explorer?.querySelector("[tabindex]")?.removeAttribute("tabindex");
   if (menu) menu.style.top = `-5000px`;
   menu?.classList.remove("show");
 }
@@ -22,8 +22,8 @@ function createItemElement(node) {
   const extension = getTypeFile(node.name);
   item.className = `pl-4 ${node.type}${node.type === "folder" ? " parent" : ""} item`;
   if (node.project) item.dataset.project = `${node.project}`;
-  item.innerHTML = `<div class="item hover:bg-gray-700 p-1 pl-4 flex items-center">
-
+  item.innerHTML = `
+<div class="item hover:bg-gray-700 p-1 pl-4 flex items-center">
   ${
     node.type === "folder"
       ? `
@@ -35,8 +35,8 @@ function createItemElement(node) {
           <use xlink:href="#icon-${extension !== null ? extension : "txt"}"></use>
         </svg>`
   }
-        <span class="item-name ml-3">${node.name}</span>
-      </div>`;
+      <span class="item-name ml-3">${node.name}</span>
+</div>`;
   return item;
 }
 
@@ -137,7 +137,7 @@ async function fetchTree() {
 }
 
 async function handleCloseModal(item, menu) {
-  item?.setAttribute("tabindex", "");
+  item?.removeAttribute("tabindex");
   menu.classList.remove("show");
   menu.style.top = `-5000px`;
 }
@@ -188,11 +188,11 @@ function transformTreeNode(tree, targetId, transformFn) {
   }
 
   if (tree.children) {
-    const updatedChildren = tree.children
+    const children = tree.children
       .map((child) => transformTreeNode(child, targetId, transformFn))
       .filter(Boolean);
 
-    return { ...tree, children: updatedChildren };
+    return { ...tree, children: children };
   }
 
   return tree;
@@ -245,6 +245,7 @@ async function handleRename(item, node, parent) {
     if (isAddNode) {
       item.remove();
       isAddNode = false;
+      renderNode(node, parent);
     }
   };
 
